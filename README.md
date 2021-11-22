@@ -6,9 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Sreenshots
 
-![Screenshot of tweet compose box](https://github.com/justintu2021/tinyapp/blob/master/docs/Signup_Login-page.png)
+![Screenshot of tweet compose box](https://github.com/justintu2021/tweeter/blob/master/Photos/Compose%20box.png);
 
-asdasdasdas
+![Screenshot of main page](https://github.com/justintu2021/tweeter/blob/master/Photos/Main%20page.png)
+
+![Screenshot of tweet](https://github.com/justintu2021/tweeter/blob/master/Photos/Tweet.png)
 
 
 ## Dependencies
