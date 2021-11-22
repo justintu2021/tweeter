@@ -3,15 +3,8 @@
   flex-direction: column;
 }
 
-/* .new-tweet {
-  display: flex;
-  
-  flex-direction: column;
-  justify-content: flex-start;
-
-} */
-
-#showing-error {
+/* notification when user input invalid content*/
+#showing-error {   
   margin-top: 15px;
   display: flex;
   border-style:dotted;
@@ -45,15 +38,14 @@
   background-color:#4c64b3;
   color:whitesmoke;
   font-family: 'Bungee', cursive;
-  
 }
 
 .button-counter {
-  display: flex
+  display: flex;
 }
 .counter {
  flex-direction: row;
  font-family:'Bungee', cursive;
-margin-left: auto;
+ margin-left: auto;
 }
 

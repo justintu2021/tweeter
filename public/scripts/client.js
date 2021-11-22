@@ -7,6 +7,7 @@
 
 
 $( document ).ready(function() {
+  //Hide the showing-error when user give empty string or over 140 characters!!
   $("#showing-error").hide()
   const escape = function (str) {
     let div = document.createElement("div");
@@ -44,22 +45,22 @@ $( document ).ready(function() {
     }
   }
 
+  //Event handler when user submit new tweet : check input valid, then post on the main page
 $( "#tweet-form" ).submit(function(event) {
   event.preventDefault();
   const textValue = $('#tweet-text').val()
   const seri_data = $("#tweet-form").serialize();
   
-  
-  if(textValue.length === 0) {
-    $("#showing-error")
+  if(textValue.length === 0) { // user didn't enter anything,but submit
+    $("#showing-error")        
     .html("⚠️ Please input something! ⚠️")
     .slideDown();
     
-  } else if (textValue.length > 140) {
+  } else if (textValue.length > 140) { // user enter over 140 char
     $("#showing-error")
     .html("⚠️ Over 140 character!!! ⚠️")
     .slideDown()
-  } else {
+  } else {                             // valid input
     $("#showing-error").hide()
     $.post("/tweets",seri_data,function() { 
     $("#tweet-text").val("")  
@@ -69,7 +70,7 @@ $( "#tweet-form" ).submit(function(event) {
   }
 });  
 
-const loadTweets = () => {
+const loadTweets = () => { // function to return on the page what user inputted.
     $.ajax({
         url: "/tweets",
         type: 'GET',
