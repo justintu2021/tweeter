@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
-    $("#tweet-text").keydown(function() {
+    $("#tweet-text").keydown(function(event) {
       
-      let result = $(this).val().length + 1
-      if(result > 140) {
-        result = 140 - result
-      }
-      // console.log(result)
-      $(this).parentsUntil(".new-tweet").find(".counter").text(result)
+      let result = $(this).val().length
       
-      if (result < 0) {
+   
+      const $counter = $(this).parentsUntil(".new-tweet").find(".counter")
+      $counter.text(140-result)
+
+      if (result > 140) {
         $(".counter").attr("id", "negative"); 
+        
       } else {
         $(".counter").removeAttr("id", "negative"); 
       }

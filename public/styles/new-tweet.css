@@ -11,13 +11,23 @@
 
 } */
 
-.form-inline{
+#showing-error {
+  margin-top: 15px;
+  display: flex;
+  border-style:dotted;
+  border-color: red;
+  justify-content:center;
+  align-items: center;
+  color: red
+}
+
+#tweet-form{
   display: flex;
   flex-direction:column;
   justify-content: stretch;
 }
 
-.answer {
+#tweet-text {
   border: 0px;
   margin: 0px; 
   width: 100%; 

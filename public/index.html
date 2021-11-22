@@ -17,12 +17,13 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -31,63 +32,56 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="navi">
-      <span class="navi" id="nav1">tweeter</span>
-      <span class="navi" id="nav2"> 
+      <div id="nav1">tweeter</div>
+      <div id="nav2"> 
         <p>Write a new tweet
         <br><i class="fas fa-angle-double-down"></i></p>
-        </span>
-      
-    </nav>
-    <header>
-      <div>
-          <img id="avatar" src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2 id="your-name">Justin Tu</h2>
-      </div>
-  </header>
-
-    <!-- Page-specific (main) content here -->
-    <main>
-      <div class="example">
-      <h1>TRUMP IPSUM</h1>
-        <p> Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. </p>
-      <br>
-        <h2>HIPSTER IPSUM</h2>
-          <p> A handcrafted, small-batch, artisinal pour-over version of the classic lorem ipsum generator, Hipster Ipsum will give your mocks that blue collar touch.</p>
-          <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
-    </div>
-    <section >
-      <div><h2>Compose Tweet</h2></div>
-      <form class="form-inline" action="/tweets/" method="POST">
-        <div><div><label class="question" for="tweet-text">What are you humming about?</label></div>
-        <textarea class="answer" name="text" id="tweet-text"></textarea>
-        <br>
-        <div class="button-counter">
-          <div><button class="button-tweet" type="submit">Tweet</button></div>
-          <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
-      </div>
-      </form>
-    </section>
-    <section>
-      <article>
-        <tweet-header>
-          <div class="group1">
-            <div class="picture1"><i class="fa-solid fa-face-flushed"></i></div>
-            <div class="nickname">Rohda Jacobs</div>
-          </div>
-          <div class="blur-name" >@MrsJacobs</div>
-        </tweet-header>
-        <textarea >Hello World!</textarea>
-        <tweet-footer>
-          <div id="date">10 days ago</div>
-          <div style="font-size: 0.8rem;" class="icon"><i id="pic1" class="fa-solid fa-flag fa-xs"></i><i id="pic2" class="fa-solid fa-comment-dots fa-xs"></i><i id="pic3" class="fa-solid fa-heart fa-xs"></i></div>
-        </tweet-footer>
-      </article>
-    </section>
+    </nav>
+  <div class="divide">
+      <header class="header1">
+        <div>
+            <img id="avatar" src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2 id="your-name">Justin Tu</h2>
+        </div>
+      </header>
+    <!-- Page-specific (main) content here -->
+      <main>
+        <section class="new-tweet">
+          <div id="showing-error"></div>
+          <div><h2>Compose Tweet</h2></div>
 
-    </main>
+          <form id="tweet-form" action="/tweets" method="POST">
+            <label class="question" for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <br>
+            <div class="button-counter">
+              <button id="submit-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          
+        </section>
+        <section class="tweets-container">
+          <article>
+            <tweet-header>
+              <div class="group1">
+                <div class="picture"><i class="fa-solid fa-face-flushed"></i></div>
+                <div class="nickname">Rohda Jacobs</div>
+              </div>
+              <div class="blur-name" >@MrsJacobs</div>
+            </tweet-header>
+            <p>Hello World!</p>
+            <tweet-footer>
+              <div id="date">10 days ago</div>
+              <div style="font-size: 0.8rem;" class="icon"><i id="pic1" class="fa-solid fa-flag fa-xs"></i><i id="pic2" class="fa-solid fa-comment-dots fa-xs"></i><i id="pic3" class="fa-solid fa-heart fa-xs"></i></div>
+            </tweet-footer>
+          </article>
+        </section>
+      </main>
+  </div> 
   </body>
 </html>
