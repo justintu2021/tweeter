@@ -7,6 +7,30 @@
 
 
 $( document ).ready(function() {
+  // fetch('http://localhost:8080/tweets')
+  // .then(response => response.json())
+  // .then(data => {
+  //   console.log(data)
+  //   $(".tweets-container article").remove()
+  //   renderTweets(data)
+  // })
+  // .catch(err => console.log(err));
+
+  const loadTweets = () => { // function to return on the page what user inputted.
+    $.ajax({
+        url: "/tweets",
+        type: 'GET',
+        success: function(res) {
+          $(".tweets-container article").remove()
+          renderTweets(res)
+        },
+        error: function(error) {
+          console.log(error)
+        }
+      })
+  }
+  loadTweets()
+
   //Hide the showing-error when user give empty string or over 140 characters!!
   $("#showing-error").hide()
   const escape = function (str) {
@@ -70,19 +94,11 @@ $( "#tweet-form" ).submit(function(event) {
   }
 });  
 
-const loadTweets = () => { // function to return on the page what user inputted.
-    $.ajax({
-        url: "/tweets",
-        type: 'GET',
-        success: function(res) {
-          $(".tweets-container article").remove()
-          renderTweets(res)
-        },
-        error: function(error) {
-          console.log(error)
-        }
-      })
-}
+
+
+
+
+
 
 })
 
